@@ -1,3 +1,4 @@
+# syntax=docker/dockerfile:1
 FROM golang:1.18.3 as build
 WORKDIR /workspace
 ENV GO111MODULE=on \
@@ -6,7 +7,7 @@ ENV GO111MODULE=on \
 COPY . .
 RUN GOOS=linux GOARCH=$(go env GOARCH) CGO_ENABLED=0 go build -o build/linux/${BINARY} ./cmd/main.go
 
-FROM {base_image}
+FROM registry.opensource.zalan.do/library/alpine-3.15:latest
 LABEL maintainer="Team ACID @ Zalando <team-acid@zalando.de>"
 
 # We need root certificates to deal with teams api over https
