@@ -10,7 +10,7 @@ env:
   REGISTRY: ghcr.io
   OPERATOR_IMAGE_NAME: ${{ github.repository }}
   LOGICAL_BACKUP_IMAGE_NAME: ${{ github.repository_owner }}/logical-backup
-  OPERATOR_UI_IMAGE_NAME:${{ github.repository_owner }}/postgres-operator-ui
+  OPERATOR_UI_IMAGE_NAME: ${{ github.repository_owner }}/postgres-operator-ui
 
   # different archs for the image
   PLATFORMS: linux/amd64,linux/arm64
